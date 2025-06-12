@@ -23,5 +23,12 @@ if (!isset($routes[$routeKey])) {
 }
 
 [$controllerClass, $method] = $routes[$routeKey];
+
+// echo "<pre>";
+// echo var_dump($routeKey);
+// echo var_dump($controllerClass);
+// echo var_dump($method);
+// echo "</pre>";
+
 $controller = new $controllerClass($twig);
 echo call_user_func([$controller, $method]);

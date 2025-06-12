@@ -13,6 +13,11 @@ class AuthController
         $this->twig = $twig;
     }
 
+    public function index(){
+        header("Location: /google/login");
+        exit;
+    }
+
     public function googleLogin()
     {
         return $this->twig->render('auth/login.twig');

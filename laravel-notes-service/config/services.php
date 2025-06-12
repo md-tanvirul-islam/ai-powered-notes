@@ -35,4 +35,5 @@ return [
         ],
     ],
 
+    "oauth_service_url"  => env('OAUTH_SERVICE_URL')
 ];
