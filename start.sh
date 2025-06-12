@@ -20,7 +20,7 @@ NC='\033[0m' # No Color
 
 RESET_DATABASES=false
 
-DATABASES=("al-powered-notes_local_db")
+DATABASES=("al_powered_notes_local_db")
 MYSQL_USER="root"
 MYSQL_PASSWORD="password"
 DOCKER_COMMAND_PREFIX=""
