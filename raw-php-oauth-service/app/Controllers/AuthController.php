@@ -13,12 +13,12 @@ class AuthController
         $this->twig = $twig;
     }
 
-    public function login()
+    public function googleLogin()
     {
         return $this->twig->render('auth/login.twig');
     }
 
-    public function handleLogin()
+    public function handleGoogleLogin()
     {
         if (!Csrf::validateToken($_POST['csrf_token'] ?? '')) {
             http_response_code(403);
@@ -38,12 +38,12 @@ class AuthController
         ]);
     }
 
-    public function register()
+    public function googleregister()
     {
         return $this->twig->render('auth/register.twig');
     }
 
-    public function handleRegister()
+    public function handleGoogleRegister()
     {
         return $this->twig->render('auth/register.twig', [
             'message' => 'Registered successfully!'

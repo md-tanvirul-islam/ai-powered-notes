@@ -7,7 +7,7 @@ services:
     image: laravel-notes-service-image
     build:
       context: .
-      dockerfile: laravel-notes-service/docker/Dockerfile
+      dockerfile: laravel-notes-service/Dockerfile
     restart: unless-stopped
     tty: true
     environment:
@@ -28,7 +28,7 @@ services:
     image: raw-php-oauth-service-image
     build:
       context: .
-      dockerfile: raw-php-oauth-service/docker/Dockerfile
+      dockerfile: raw-php-oauth-service/Dockerfile
     restart: unless-stopped
     tty: true
     environment:
