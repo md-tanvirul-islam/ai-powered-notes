@@ -102,7 +102,11 @@ for database in ${DATABASES[*]}; do
         eval "${DATABASE_COMMAND_PREFIX} \"DROP DATABASE IF EXISTS ${database};\""
     fi
 
-    DB_EXISTS=$(eval "${DATABASE_COMMAND_PREFIX} \"SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${database}';\" 2>&1 | grep -v \"mysql:\")"
+    # DB_EXISTS=$(eval "${DATABASE_COMMAND_PREFIX} \"SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${database}';\" 2>&1 | grep -v \"mysql:\")"
+
+    DB_EXISTS=$(
+        eval "${DATABASE_COMMAND_PREFIX} \"SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${database}';\"" 2>&1 | grep -v "mysql:"
+    )
 
     if [[ "${DB_EXISTS}" = "1" ]]; then
         echo "${database} exists, skipping"
