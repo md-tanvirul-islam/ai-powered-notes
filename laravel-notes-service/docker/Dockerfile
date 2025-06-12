@@ -1,4 +1,4 @@
-FROM php:8.2.14-fpm-alpine3.19
+FROM 8.4.1-fpm-alpine3.21
 
 RUN apk update && \
     apk add --no-cache nginx git curl zip unzip openssh libzip-dev libpng-dev jpeg-dev freetype-dev gd bash \
